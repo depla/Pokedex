@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/Users/dennis/Documents/GitHub/Pokedex/Pokedex.cpp
+Pokedex.h
+/Users/dennis/Documents/GitHub/Pokedex/Pokedex.h
+PokemonImage.h
+/Users/dennis/Documents/GitHub/Pokedex/PokemonImage.h
+iostream
+-
+fstream
+-
+sstream
+-
+
 /Users/dennis/Documents/GitHub/Pokedex/Pokedex.h
 string
 -
