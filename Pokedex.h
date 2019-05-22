@@ -14,6 +14,9 @@
 
 using namespace std;
 
+/**
+ * Header file for Pokedex class
+ */
 class Pokedex
 {
 private:
