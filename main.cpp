@@ -1,6 +1,39 @@
+/**
+ * ---------------------------------------------------------------------------------------------------
+ *
+ * Course: CS151       Days & Time: Thurs, 5:30pm-9:20pm
+ *
+ * Chapter Number: N/A  Project Number or Group Project Name: Final Project (Pokedex)
+ *
+ * Programmer(s): Dennis La
+ *
+ * Date created or Last Modified: Last modified on 21 May 2019
+ *
+ * ---------------------------------------------------------------------------------------------------
+ *
+ * Program Title: Pokedex
+ *
+ * Program description: Lets the user find Pokemon entries in the Pokedex through searching and sorting methods.
+ *
+ * The purpose of this program is to: Provide the user a way to look up Pokemon data in a program that incorporates
+ * CS topics learned in advanced C++
+ *
+ * ---------------------------------------------------------------------------------------------------
+ *
+ * ALGORITHM:
+ * 1.
+ *
+ * ---------------------------------------------------------------------------------------------------
+ *
+ * IMPORTED PACKAGES:
+ * #include <iostream> //needed to work with io
+ * #include "Pokemon.h"
+ * #include "Pokedex.h"
+ *
+ * ---------------------------------------------------------------------------------------------------
+ */
+
 #include <iostream>
-#include <stdio.h>      /* printf */
-#include <stdlib.h>
 #include "Pokemon.h"
 #include "Pokedex.h"
 
@@ -11,6 +44,10 @@ void printGreeting();
 void printMenu();
 void validatePokemonNum(int number, Pokedex * pokedex);
 
+/**
+ * PokedexOutofBoundsException class the extends exception. Thrown when the user enters a number that is out of
+ * bounds of the Pokemon numbers range
+ */
 class PokedexOutofBoundsException : exception
 {
 public:
@@ -20,19 +57,31 @@ public:
     PokedexOutofBoundsException() = default;
 };
 
+/**
+ * Driver that lts the user interact with the Pokedex menu. Lets the user view, search and sort the Pokemon.
+ *
+ * @return 0
+ */
 int main()
 {
+    //make a pokdex object
     Pokedex pokedex;
+
+    //variable to hold users choice for the menu
     int userChoice;
 
+    //print the greeting
     printGreeting();
 
     do
     {
+        //print the menu
         printMenu();
 
+        //get input from user
         cin >> userChoice;
 
+        //validate
         while(cin.fail() || userChoice < 1 || userChoice > 7)
         {
             cin.clear();
@@ -45,19 +94,23 @@ int main()
         //switch to handle the choice from the user
         switch (userChoice)
         {
+            //show all pokemon case
             case 1:
             {
                 pokedex.showAllPokemon();
 
                 break;
             }
+            //search by pokemon number
             case 2:
             {
+                //get number from user
                 cout << "Enter the Pokemon number." << endl;
                 int pokemonNum;
 
                 cin >> pokemonNum;
 
+                //validate
                 while(cin.fail())
                 {
                     cin.clear();
@@ -78,12 +131,15 @@ int main()
                     break;
                 }
 
+                //show the pokemon
                 cout << pokedex.findPokemonByNumber(pokemonNum).showString() << endl;
 
                 break;
             }
+            //search by name
             case 3:
             {
+                //get name from user
                 cout << "Enter the Pokemon name or part of it." << endl;
                 string name;
 
@@ -92,12 +148,15 @@ int main()
 
                 getline(cin, name);
 
+                //show pokemon that match the entered string
                 pokedex.findPokemonByName(name);
 
                 break;
             }
+            //search by type
             case 4:
             {
+                //get the type from the user
                 cout << "Enter the Pokemon type or part of it." << endl;
                 string type;
 
@@ -106,10 +165,12 @@ int main()
 
                 getline(cin, type);
 
+                //show pokemon that match the type
                 pokedex.findPokemonByType(type);
 
                 break;
             }
+            //sort the pokemon by number
             case 5:
             {
                 cout << "Sorting by number..." << endl;
@@ -120,6 +181,7 @@ int main()
 
                 break;
             }
+            //sort the pokemon by name
             case 6:
             {
                 cout << "Sorting by name..." << endl;
@@ -130,6 +192,7 @@ int main()
 
                 break;
             }
+            //exit the program
             case 7:
             {
                 cout << "Exiting Pokedex." << endl;
@@ -146,11 +209,12 @@ int main()
     }while(userChoice != 7);
 
 
-
-
     return 0;
 }
 
+/**
+ * Print out the greeting
+ */
 void printGreeting()
 {
     string pokemonLogo = "                                  ,'\\\n"
@@ -170,6 +234,9 @@ void printGreeting()
     cout << "Welcome to the Pokedex!" << endl;
 }
 
+/**
+ * Print out the menu
+ */
 void printMenu()
 {
     cout << "Pokedex Menu" << endl;
@@ -183,6 +250,12 @@ void printMenu()
     cout << "Enter your choice." << endl;
 }
 
+/**
+ * Validates the pokemon number entered by the user by throwing an exception if it is out of bounds
+ *
+ * @param number the number they entered
+ * @param pokedex the pokedex
+ */
 void validatePokemonNum(int number, Pokedex * pokedex)
 {
     if(number < 1 || number > pokedex->getPokemonVector().size())

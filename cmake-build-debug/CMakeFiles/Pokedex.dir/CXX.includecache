@@ -31,10 +31,6 @@ string
 /Users/dennis/Documents/GitHub/Pokedex/main.cpp
 iostream
 -
-stdio.h
--
-stdlib.h
--
 Pokemon.h
 /Users/dennis/Documents/GitHub/Pokedex/Pokemon.h
 Pokedex.h
