@@ -35,6 +35,9 @@ int main()
 
         while(cin.fail() || userChoice < 1 || userChoice > 7)
         {
+            cin.clear();
+            cin.ignore();
+
             cout << "Invalid choice please reenter." << endl;
             cin >> userChoice;
         }
@@ -57,6 +60,9 @@ int main()
 
                 while(cin.fail())
                 {
+                    cin.clear();
+                    cin.ignore();
+
                     cout << "Invalid input please reenter." << endl;
                     cin >> pokemonNum;
                 }
