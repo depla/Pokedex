@@ -8,6 +8,9 @@
 
 using namespace std;
 
+/**
+ * Default constructor for Pokemon, sets everything to a dummy value
+ */
 Pokemon :: Pokemon()
 {
     this->number = -1;
@@ -19,6 +22,16 @@ Pokemon :: Pokemon()
     pokemonImage.setAsciiImage("N/A");
 }
 
+/**
+ * Constructor without the Pokemon Image
+ *
+ * @param number the number of the Pokemon
+ * @param name the name of the Pokemon
+ * @param description the description of the Pokemon
+ * @param primaryType the primary type of the Pokemon
+ * @param secondaryType the secondary type of the Pokemon
+ * @param bio the bio of the Pokemon
+ */
 Pokemon :: Pokemon(int number, string name, string description, string primaryType,
                    string secondaryType, string bio)
 {
