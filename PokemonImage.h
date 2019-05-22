@@ -9,6 +9,9 @@
 
 using namespace std;
 
+/**
+ * Header file for the PokemonImage class
+ */
 class PokemonImage
 {
 private:

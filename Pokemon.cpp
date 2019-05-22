@@ -44,6 +44,17 @@ Pokemon :: Pokemon(int number, string name, string description, string primaryTy
     pokemonImage.setAsciiImage("N/A");
 }
 
+/**
+ * Full constructor that takes in all data
+ *
+ * @param number the number of the Pokemon
+ * @param name the name of the Pokemon
+ * @param description the description of the Pokemon
+ * @param primaryType the primary type of the Pokemon
+ * @param secondaryType the secondary type of the Pokemon
+ * @param bio the bio of the Pokemon
+ * @param pokemonImage the ascii image of the Pokemon
+ */
 Pokemon :: Pokemon(int number, string name, string description, string primaryType,
         string secondaryType, string bio, PokemonImage pokemonImage)
 {
@@ -56,78 +67,122 @@ Pokemon :: Pokemon(int number, string name, string description, string primaryTy
     this->pokemonImage = pokemonImage;
 }
 
+/**
+ * Sets the Pokemon number
+ */
 void Pokemon :: setNumber(int number)
 {
     this->number = number;
 }
 
+/**
+ * Sets the Pokemon name
+ */
 void Pokemon :: setName(string name)
 {
     this->name = name;
 }
 
+/**
+ * Sets the Pokemon description
+ */
 void Pokemon :: setDescription(string description)
 {
     this->description = description;
 }
 
+/**
+ * Sets the Pokemon primary type
+ */
 void Pokemon :: setPrimaryType(string primaryType)
 {
     this->primaryType = primaryType;
 }
 
+/**
+ * Sets the Pokemon secondary type
+ */
 void Pokemon :: setSecondaryType(string secondaryType)
 {
     this->secondaryType = secondaryType;
 }
 
+/**
+ * Sets the Pokemon bio
+ */
 void Pokemon :: setBio(string bio)
 {
     this->bio = bio;
 }
 
+/**
+ * Sets the Pokemon image
+ */
 void Pokemon ::setPokemonImage(PokemonImage pokemonImage)
 {
     this->pokemonImage = pokemonImage;
 }
 
 
-
+/**
+ * Gets the Pokemon number
+ */
 int Pokemon :: getNumber()
 {
     return number;
 }
 
+/**
+ * Gets the Pokemon name
+ */
 string Pokemon :: getName()
 {
     return name;
 }
 
+/**
+ * Gets the Pokemon description
+ */
 string Pokemon :: getDescription()
 {
     return description;
 }
 
+/**
+ * Gets the Pokemon primary type
+ */
 string Pokemon :: getPrimaryType()
 {
     return primaryType;
 }
 
+/**
+ * Gets the Pokemon secondary type
+ */
 string Pokemon :: getSecondaryType()
 {
     return secondaryType;
 }
 
+/**
+ * Gets the Pokemon bio
+ */
 string Pokemon :: getBio()
 {
     return bio;
 }
 
+/**
+ * Gets the Pokemon image
+ */
 PokemonImage Pokemon :: getPokemonImage()
 {
     return pokemonImage;
 }
 
+/**
+ * String of the Pokemon's data
+ */
 string Pokemon :: showString()
 {
     string pokeString;

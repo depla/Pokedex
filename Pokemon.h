@@ -10,6 +10,9 @@
 
 using namespace std;
 
+/**
+ * Header file for Pokemon class
+ */
 class Pokemon
 {
 
