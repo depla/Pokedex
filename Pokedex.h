@@ -11,7 +11,6 @@
 #include "Pokemon.h"
 #include "PokemonImage.h"
 
-
 using namespace std;
 
 /**
@@ -58,6 +57,4 @@ public:
     vector<Pokemon> getPokemonVector();
 
 };
-
-
 #endif //POKEDEX_POKEDEX_H
