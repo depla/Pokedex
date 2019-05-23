@@ -106,7 +106,7 @@
  * 13. If the user enter 7: The program ends
  *
  * 14. Otherwise, do nothing and go back to the beginning of the do while loop
- * 
+ *
  * ---------------------------------------------------------------------------------------------------
  *
  * IMPORTED PACKAGES:
